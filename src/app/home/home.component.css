@@ -1,0 +1,45 @@
+.index{
+    top: 0;
+    background-image: url(../../assets/Images/acceuil.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    text-align: center;
+    background-color: transparent;
+}
+.presentation{
+    display: flex;
+    padding: 10%;
+    /* padding-left: 30%; */
+}
+
+.description-presentation{
+    height: max-content;
+    vertical-align: middle;
+    padding-top: 10%;
+    font-size: 30px;
+    padding-right: 5%;
+    text-align: right;
+}
+
+.video{
+    min-width: 686px;
+    min-height: 386px;
+}
+.btn-welcome{
+    vertical-align: middle;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1.5px);
+    border-radius: 12px;
+}
+.p-welcome{
+    padding-bottom: 0;
+    display: contents;
+}
+
+.presentation p{
+    padding-top: 2px;
+    min-width: max-content;
+}

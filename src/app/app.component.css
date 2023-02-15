@@ -1,0 +1,9 @@
+.parent{
+    background-color: black;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    src: url("/assets/font/Muli-Italic.ttf");
+    font-family: "muli";
+    color: white !important;
+}
