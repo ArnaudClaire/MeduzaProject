@@ -1,31 +1,22 @@
 .index{
     top: 0;
     background-image: url(../../assets/Images/acceuil.png);
-    background-size: cover;
+    /* background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
+    background-position-x: center; */
     text-align: center;
     background-color: transparent;
 }
-.presentation{
-    display: flex;
-    padding: 10%;
-    /* padding-left: 30%; */
-}
+
 
 .description-presentation{
     height: max-content;
     vertical-align: middle;
-    padding-top: 10%;
     font-size: 30px;
     padding-right: 5%;
     text-align: right;
 }
 
-.video{
-    min-width: 686px;
-    min-height: 386px;
-}
 .btn-welcome{
     vertical-align: middle;
     text-align: center;

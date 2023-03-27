@@ -1,0 +1,10 @@
+.description-creation{
+    height: max-content;
+    vertical-align: middle;
+    padding-top: 10%;
+    font-size: 30px;
+    padding-right: 5%;
+    text-align: right;
+    background-color: white;
+    color: black;
+}

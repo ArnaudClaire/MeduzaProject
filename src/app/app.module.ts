@@ -7,6 +7,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { FooterComponent } from './footer/footer/footer.component';
+import { CreationComponent } from './creation/creation.component';
+import { BenefitComponent } from './benefit/benefit.component';
+import { TeamComponent } from './team/team.component';
+import { BackOfficeComponent } from './back-office/back-office.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,10 +24,15 @@ import { FooterComponent } from './footer/footer/footer.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
+    CreationComponent,
+    BenefitComponent,
+    TeamComponent,
+    BackOfficeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -28,7 +43,19 @@ import { FooterComponent } from './footer/footer/footer.component';
         path: 'Meduza-home',
         component: HomeComponent,
       },
+      {
+        path: 'Meduza-creation',
+        component: CreationComponent,
+      },
+      {
+        path: 'backOffice',
+        component: BackOfficeComponent,
+      },
     ]),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
   ],
   providers: [],
   bootstrap: [AppComponent]

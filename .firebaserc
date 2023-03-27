@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "meduza-b395f": {
+      "hosting": {
+        "MeduzaProject": [
+          "meduza-b395f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "meduza-b395f"
+  }
+}
