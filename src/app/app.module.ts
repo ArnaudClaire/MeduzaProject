@@ -17,6 +17,11 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProjectComponent } from './project/project.component';
+import { AddProjectComponent } from './add-project/add-project.component';
+import { UpdateProjectComponent } from './update-project/update-project.component';
+import { DeleteProjectComponent } from './delete-project/delete-project.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +33,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     BenefitComponent,
     TeamComponent,
     BackOfficeComponent,
+    ProjectComponent,
+    AddProjectComponent,
+    UpdateProjectComponent,
+    DeleteProjectComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { ProjectService } from './../project.service';
 import { Component, OnInit } from '@angular/core';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
@@ -11,41 +12,47 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class BackOfficeComponent {
   
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private projectService: ProjectService) { }
 
   mediaForm!: FormGroup;
-
+  projects: any;
   app = initializeApp(environment.firebase);
   db = getFirestore(this.app);
   CRUDProject = "";
+
   ngOnInit() {
-    this.mediaForm = this.fb.group({
-      mediaUrl: ['', Validators.required],
-      title: ['', Validators.required],
-      description: ['', Validators.required],
+    this.projectService.getProjects().then((data) => {
+      this.projects=data;
     });
   }
 
-  async addProject() {
-    const newMedia = {
-      mediaUrl: this.mediaForm.value.mediaUrl,
-      title: this.mediaForm.value.title,
-      description: this.mediaForm.value.description,
-    };
-    const productsCol = collection(this.db, 'shopProducts');
-    await addDoc(productsCol, newMedia);
+  async onSubmit() {
+    switch(this.CRUDProject) { 
+      case "add": { 
+          this.projectService.addNewProject(this.mediaForm.value);
+          this.CRUDProject="get";
+        break; 
+      } 
+      case "upt": { 
+          this.projectService.updateProject(this.mediaForm.controls['id'].toString(),this.mediaForm.value);
+          this.CRUDProject="get";
+        break; 
+      } 
+      case "del": { 
+          this.projectService.deleteProject(this.mediaForm.value);
+          this.CRUDProject="get";
+        break;  
+      } 
+      default: { 
+          this.CRUDProject="get";
+        break; 
+      } 
+    } 
   }
-  
 
-  async deleteProject() {
-    const productsCol = collection(this.db, 'shopProducts');
-    const productSnapshot = await getDocs(productsCol);
-    const productList = productSnapshot.docs.map(doc => doc.data());
-    return productList;
-  }
-
-  async updProject(data : any) {
-    const productsCol = collection(this.db, 'shopProducts');
-    await addDoc(productsCol, data);
+  refresh=(): void =>{
+    this.projectService.getProjects().then((projects) => {
+      this.projects = projects;
+    });
   }
 }
