@@ -23,34 +23,55 @@
       <div class="w-full max-w-xs">
         <form [formGroup]="formControl" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div class="mb-4">
-            <label for="titre" class="block text-gray-700 text-sm font-bold mb-2">
+            <label for="title" class="block text-gray-700 text-sm font-bold mb-2 uppercase">
               titre
             </label>
-            <input formControltitre="titre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="titre" type="text" placeholder="titre">
-            <div *ngIf=" (formControl.controls['titre'].dirty)">
+            <input formControlName="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="title">
+            <div *ngIf=" formControl.controls['title'].invalid && (formControl.controls['title'].dirty)">
               <p class="text-red-500 text-xs italic">Remplissez un nom</p>
             </div>
           </div>
           
           <div class="mb-6">
-            <label for="descripion" class="block text-gray-700 text-sm font-bold mb-2">
+            <label for="descripion" class="block text-gray-700 text-sm font-bold mb-2 uppercase">
               description
             </label>
-            <input formControltitre="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" placeholder="description">
+            <input formControlName="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" placeholder="description">
             <div *ngIf="formControl.controls['description'].invalid && (formControl.controls['description'].dirty)">
               <p class="text-red-500 text-xs italic">Remplissez une description</p>
             </div>
           </div>
+          <!-- ... -->
           <div class="mb-6">
             <div class="flex items-center justify-center w-full">
-              <label for="url" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                URL de l'image
+              <label for="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                FILE du projet
               </label>
-              <input formControltitre="url" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="file" placeholder="URL">
-
-              <img [src]="formControl.controls['url'].value">
-            </div> 
+              <input formControlName="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="file" type="file" placeholder="FICHIER" (change)="selectFile($event)">
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                [disabled]="!selectedFiles"
+                (click)="upload()"
+              >
+                Upload
+              </button>
+            </div>
+            <div *ngIf="currentFileUpload" class="relative pt-1">
+              <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
+                <div
+                  [style.width.%]="percentage"
+                  role="progressbar"
+                  class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500"
+                >
+                  <span>{{ percentage }}%</span>
+                </div>
+              </div>
+            </div>
+            
+            <video *ngIf="videoSrc" [src]="videoSrc" controls class="my-4"></video>
           </div>
+          <!-- ... -->
+
         </form>
       </div>
       <!--footer-->

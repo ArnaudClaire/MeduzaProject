@@ -4,6 +4,8 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import { environment } from 'src/environments/environment';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FileUploadService } from '../file-upload.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-back-office',
@@ -12,7 +14,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class BackOfficeComponent {
   
-  constructor(private fb: FormBuilder, private projectService: ProjectService) { }
+  constructor(private fb: FormBuilder, private projectService: ProjectService, private uploadService: FileUploadService) { }
 
   mediaForm!: FormGroup;
   projects: any;

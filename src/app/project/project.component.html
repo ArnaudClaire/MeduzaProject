@@ -1,7 +1,18 @@
-<a href="secondStore#" class="group">
-  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-    <embed src="{{ project.url }}" class="h-full w-full object-cover object-center group-hover:opacity-75">
+
+  <!-- <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+    <embed src="{{ project.file }}" class="h-full w-full object-cover object-center group-hover:opacity-75">
+  </div> -->
+  <div *ngIf="file.type.includes('image'); else elseBlock">
+    <img [src]="file.url" [alt]="file.name">
   </div>
-  <h3 class="mt-4 text-sm text-gray-700">{{ project.titre }}</h3>
+  <ng-template #elseBlock>
+    <div *ngIf="file.type.includes('video');">
+      <video width="320" height="240" controls>
+        <source [src]="file.url" [type]="file.type">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </ng-template>
+  
+  <h3 class="mt-4 text-sm text-gray-700">{{ project.title }}</h3>
   <p class="mt-1 text-lg font-medium text-gray-900">{{ project.description }}</p>
-</a>

@@ -17,7 +17,7 @@ export class UpdateProjectComponent {
     });
     }
     @Input() refresh: any;
-    @Input() project: Project= { id: '', title: '', description: '', url: '' };
+    @Input() project: Project= { id: '', title: '', description: '', file: '' };
     formControl: FormGroup;
     showModal = false;
     toggleModal(){
@@ -28,7 +28,7 @@ export class UpdateProjectComponent {
       if(this.formControl.controls['title']){
         this.formControl.controls['title'].setValue(this.project.title);
         this.formControl.controls['description'].setValue(this.project.description);
-        this.formControl.controls['url'].setValue(this.project.url);
+        this.formControl.controls['file'].setValue(this.project.file);
       }
       
     }

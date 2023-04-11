@@ -43,11 +43,11 @@
             </div>
           </div>
           <div class="mb-6">
-            <label for="url" class="block text-gray-700 text-sm font-bold mb-2" >
-              url
+            <label for="file" class="block text-gray-700 text-sm font-bold mb-2" >
+              file
             </label>
-            <input formControlName="url" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="url" type="url" min="0" step="0.01" placeholder="{{project.url}}">
-            <div *ngIf="formControl.controls['url'].invalid && (formControl.controls['url'].dirty)">
+            <input formControlName="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="file" type="file" min="0" step="0.01" placeholder="{{project.file}}">
+            <div *ngIf="formControl.controls['file'].invalid && (formControl.controls['file'].dirty)">
               <p class="text-red-500 text-xs italic">Remplissez un prix</p>
             </div>
           </div>

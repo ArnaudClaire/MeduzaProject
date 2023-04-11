@@ -21,6 +21,8 @@ import { ProjectComponent } from './project/project.component';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { UpdateProjectComponent } from './update-project/update-project.component';
 import { DeleteProjectComponent } from './delete-project/delete-project.component';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireModule } from '@angular/fire/compat';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { DeleteProjectComponent } from './delete-project/delete-project.componen
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       {
         path: '',

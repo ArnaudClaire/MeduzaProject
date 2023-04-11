@@ -22,7 +22,7 @@ export class ProjectService {
       const projectList = projectSnapshot.docs.map(doc => {
         const data = doc.data();
         const id = doc.id;
-        return { id, ...data } as Project;
+        return {id,...data } as Project;
       });
       return projectList;
     }
@@ -34,16 +34,16 @@ export class ProjectService {
 
   async addNewProject(data : any) {
     const projectsCol = collection(this.db, 'project');
-    addDoc(projectsCol, data).catch((error) => {console.log(error)});
+    await addDoc(projectsCol, data).catch((error) => {console.log(error)});
   }
 
   async deleteProject(id : string) {
     const projectsCol = collection(this.db, 'project');
-    deleteDoc(doc(projectsCol, id)).catch((error) => {console.log(error)});
+    await deleteDoc(doc(projectsCol, id)).catch((error) => {console.log(error)});
   }
 
   async updateProject(id : string, data : any) {
     const projectsCol = collection(this.db, 'project');
-    updateDoc(doc(projectsCol, id), data).catch((error) => {console.log(error)});
+    await updateDoc(doc(projectsCol, id), data).catch((error) => {console.log(error)});
   }
 }
