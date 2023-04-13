@@ -15,7 +15,7 @@ export class DeleteProjectComponent {
 
   @Input() fileUpload!: FileUpload;
   @Input() refresh: any;
-  @Input() project: Project= { id:'', title: '', description: '', file: '' };
+  @Input() project: Project= { id:'', title: '', description: '', file: '', checked: false };
   @Input() isMainShop: boolean = false;
   showModal = false;
 

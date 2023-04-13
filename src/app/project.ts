@@ -3,4 +3,5 @@ export interface Project {
   title: string;
   description: string;
   file: string;
+  checked: boolean;
 }

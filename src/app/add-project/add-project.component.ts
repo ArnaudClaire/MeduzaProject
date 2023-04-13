@@ -68,6 +68,9 @@ export class AddProjectComponent {
   toggleModal(){
     this.showModal = !this.showModal;
   }
+  goToSite(){
+    window.location.href = "/Meduza-home";
+  }
 
   async onSubmit() {
     if (this.formControl.valid) {

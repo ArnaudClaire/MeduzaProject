@@ -1,6 +1,5 @@
 import { Project } from './../project';
 import { Component, Input } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { FileUploadService } from '../file-upload.service';
 import { FileUpload } from '../file-upload';
 
@@ -11,9 +10,9 @@ import { FileUpload } from '../file-upload';
 })
 export class ProjectComponent {
 
-  constructor(private sanitizer: DomSanitizer, private uploadService: FileUploadService ) {}
+  constructor(private uploadService: FileUploadService ) {}
 
-  @Input() project: Project= { id:'', title: '', description: '', file: '' };
+  @Input() project: Project= { id:'', title: '', description: '', file: '', checked: false };
   
   file:FileUpload = {
     key: '', 
@@ -22,15 +21,10 @@ export class ProjectComponent {
     file: null,
     type: ''
   };
-  ngOnInit(): void {
-    this.getSafeVideoUrl();
-  }
-
-  videoUrl: string = '';
-
-  async getSafeVideoUrl() {
-    console.log("project",this.project);
-    await this.uploadService.getFile(this.project.file.split(`C:\\fakepath\\`)[1]).then(
+  ngOnChanges(): void {
+    // this.getSafeVideoUrl();
+    // console.log("cc",this.project.file)
+    this.uploadService.getFile(this.project.file.split(`C:\\fakepath\\`)[1]).then(
       (data: FileUpload) => {
         if (data) {
           this.file = data;
@@ -38,6 +32,5 @@ export class ProjectComponent {
         }
       }
     );
-    console.log("file",this.file);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, updateDoc, where, query } from 'firebase/firestore/lite';
 import { environment } from 'src/environments/environment';
 import { getAuth } from 'firebase/auth';
 import { Project } from './project';
@@ -28,6 +28,29 @@ export class ProjectService {
     }
     catch (error) {
       console.log(error);
+    }
+    return [];
+  }
+
+  async getCheckedProject() {
+    console.log('getCheckedProject');
+    try {
+      const projectsCol= query(
+        collection(this.db, 'project'),
+        where('checked', '==', true)
+      );
+      const projectSnapshot = await getDocs(projectsCol);
+      const response = projectSnapshot.docs.map(doc => {
+        const data = doc.data();
+        const id = doc.id;
+        return {id,...data } as Project;
+      });
+      console.log('response',response);
+      return response;
+    }
+    catch (error) {
+      console.log(error);
+      console.log('Error getting checked projects: ', error)
     }
     return [];
   }
