@@ -37,7 +37,7 @@ export class ProjectService {
     try {
       const projectsCol= query(
         collection(this.db, 'project'),
-        where('checked', '==', true)
+        where('checkedBox', '==', true)
       );
       const projectSnapshot = await getDocs(projectsCol);
       const response = projectSnapshot.docs.map(doc => {

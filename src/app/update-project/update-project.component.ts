@@ -15,7 +15,8 @@ export class UpdateProjectComponent {
     this.formControl = this.formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      file: [null, Validators.required],
+      file: [null],
+      checkedBox: [false, Validators.required],
     });
     }
     @Input() refresh: any;
@@ -68,7 +69,8 @@ export class UpdateProjectComponent {
       if(this.formControl.controls['title']){
         this.formControl.controls['title'].setValue(this.project.title);
         this.formControl.controls['description'].setValue(this.project.description);
-        
+        this.formControl.controls['file'].setValue(this.project.file);
+        this.formControl.controls['checkedBox'].setValue(this.project.checked);
       }
       
     }
