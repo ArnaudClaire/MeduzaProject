@@ -73,6 +73,10 @@ import { PageTeamComponent } from './page/page-team/page-team.component';
       {
         path: 'pageCreation',
         component: PageCreationComponent,
+      },
+      {
+        path: 'pageTeam',
+        component: PageTeamComponent,
       }
     ]),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
