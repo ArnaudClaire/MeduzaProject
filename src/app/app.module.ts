@@ -23,6 +23,9 @@ import { UpdateProjectComponent } from './update-project/update-project.componen
 import { DeleteProjectComponent } from './delete-project/delete-project.component';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireModule } from '@angular/fire/compat';
+import { CarrousselBlocComponent } from './carroussel-bloc/carroussel-bloc.component';
+import { PageCreationComponent } from './page/page-creation/page-creation.component';
+import { PageTeamComponent } from './page/page-team/page-team.component';
 
 
 @NgModule({
@@ -39,6 +42,9 @@ import { AngularFireModule } from '@angular/fire/compat';
     AddProjectComponent,
     UpdateProjectComponent,
     DeleteProjectComponent,
+    CarrousselBlocComponent,
+    PageCreationComponent,
+    PageTeamComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +70,10 @@ import { AngularFireModule } from '@angular/fire/compat';
         path: 'backOffice',
         component: BackOfficeComponent,
       },
+      {
+        path: 'pageCreation',
+        component: PageCreationComponent,
+      }
     ]),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
