@@ -1,11 +1,7 @@
 <div class="parent">
-    <div  *ngIf="false; else elseBlock">
-        <app-back-office></app-back-office>
-    </div>
 
-    <ng-template #elseBlock>
         <app-navbar></app-navbar>
         <router-outlet></router-outlet>
         <app-footer></app-footer>
-    </ng-template>
+
 </div>

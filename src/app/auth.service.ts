@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { initializeApp } from '@firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
+import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,9 +15,12 @@ export class AuthService {
 
   app = initializeApp(environment.firebase);
   auth = getAuth();
-
-  isAuth(): boolean {
-    return this.auth.currentUser ? true : false;
+  connected: boolean = false;
+  // 
+  async isAuth(): Promise<boolean> {
+    console.log(this.auth.currentUser);
+    this.connected = await this.auth.currentUser ? true : false;
+    return await this.auth.currentUser ? true : false;
   }
 
   async isSeller(): Promise<boolean> {
@@ -63,7 +67,9 @@ export class AuthService {
       signInWithEmailAndPassword(this.auth, email, password)
         .then((userCredential) => {
         console.log('Successfully signed in!');
+        this.connected=true;
         const user = userCredential.user;
+        console.log(user);
       })
       .catch(err => {
         console.log('Something is wrong:', err.message);

@@ -26,6 +26,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { CarrousselBlocComponent } from './carroussel-bloc/carroussel-bloc.component';
 import { PageCreationComponent } from './page/page-creation/page-creation.component';
 import { PageTeamComponent } from './page/page-team/page-team.component';
+import { PageDevisComponent } from './page/page-devis/page-devis.component';
+import { MenuComponent } from './navbar/menu/menu.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 @NgModule({
@@ -45,6 +48,9 @@ import { PageTeamComponent } from './page/page-team/page-team.component';
     CarrousselBlocComponent,
     PageCreationComponent,
     PageTeamComponent,
+    PageDevisComponent,
+    MenuComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +83,14 @@ import { PageTeamComponent } from './page/page-team/page-team.component';
       {
         path: 'pageTeam',
         component: PageTeamComponent,
+      },
+      {
+        path: 'pageDevis',
+        component: PageDevisComponent,
+      },
+      {
+        path: 'login',
+        component: SignInComponent,
       }
     ]),
     provideFirebaseApp(() => initializeApp(environment.firebase)),

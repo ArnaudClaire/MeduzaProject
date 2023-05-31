@@ -1,11 +1,34 @@
-<div class="tablefix">
-    <ul class="fixed border-b-2" id="reveal">
-        <li class="priorityLogo"><div><a class="aLogo" routerLink="/Meduza-home" ><img class="logoG" src="../../../assets/Images/MEDUZA PRODUCTION.jpg" alt="Meduza Production"></a></div></li>
-        <!-- <li class="priorityLogo"><div><button class="aLogo" (click)="goToBackOffice()" >BACK-OFFICE</button></div></li> -->
-        <li><div class="buzzdiv"><a class="buzz" routerLink="/Meduza-home">Contact</a></div></li>
-        <li><div class="buzzdiv"><a class="buzz" routerLink="/Meduza-home">Notre expertise</a></div></li>
-        <li><div class="buzzdiv"><a class="buzz" routerLink="/Meduza-home">Nos services</a></div></li>
-        <li><div class="buzzdiv"><a class="buzz" routerLink="/pageTeam">L'équipe</a></div></li>
-        <li><div class="buzzdiv"><a class="buzz" routerLink="/pageCreation">Nos Créations</a></div></li>
-    </ul>
+<div *ngIf="!isAuth">
+    <div *ngIf="!menu; else visible" class="tablefix" [ngStyle]="{ opacity: opacity }" >
+        <ul class="fixed border-b-2" id="reveal">
+            <li class="priorityLogo"><div><a class="aLogo" routerLink="/Meduza-home" ><img class="logoG" src="../../../assets/Images/MEDUZA PRODUCTION.jpg" alt="Meduza Production"></a></div></li>
+            <!-- <li class="priorityLogo"><div><button class="aLogo" (click)="goToBackOffice()" >BACK-OFFICE</button></div></li> -->
+            <li><div class="buzzdiv"><a class="buzz" routerLink="/Meduza-home">Contact</a></div></li>
+            <li><div class="buzzdiv"><a class="buzz" routerLink="/Meduza-home">Notre expertise</a></div></li>
+            <li><div class="buzzdiv"><a class="buzz" routerLink="/Meduza-home">Nos services</a></div></li>
+            <li><div class="buzzdiv"><a class="buzz" routerLink="/pageTeam">L'équipe</a></div></li>
+            <li><div class="buzzdiv"><a class="buzz" routerLink="/pageCreation">Nos Créations</a></div></li>
+        </ul>
+    </div>
+    <ng-template #visible>
+        <div class="fixed z-50 top-0 right-0 flex flex-row-reverse h-52 ">
+            <div class="flex flex-col ">
+
+                <button (click)="openModalMenu()" [ngClass]="{ 'hidden': modal }" class="flex justify-center items-center w-12 h-80 align-middle rounded-full bg-black">
+                    <img class="pt-4" src="../../../assets/Images/MEDUZA PRODUCTION.jpg" alt="Meduza Production">
+                </button>
+
+                
+                <ng-container *ngIf="modal">
+                    <div class="text-left p-10  w-full text-2xl top-0 flex flex-col rounded-bl-3xl justify-between bg-black">
+                        <button (click)="openModalMenu()">
+                            <p>X</p>
+                        </button>
+                        <app-menu></app-menu>
+                    </div>   
+                </ng-container>
+            </div>
+            
+        </div>
+    </ng-template>
 </div>

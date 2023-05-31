@@ -1,0 +1,49 @@
+
+
+
+<div class="h-screen bg-[url('/assets/Images/acceuil.png')] bg-cover flex items-center justify-evenly align-middle">
+  <div class="bg-opacity-30 bg-white backdrop-blur-sm pt-10  rounded-lg shadow relative  min-h-fit ">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+      <div class="flex justify-center w-full">
+        <h3 class="text-xl rounded w-3/6 uppercase text-center">Devis Gratuit</h3>
+      </div>  
+      <div class="flex flex-row justify-between">
+        <!-- nom -->
+        <div>
+          <input [ngClass]="{'border-red-600 border-4': contactForm.controls['lastName'].invalid && (contactForm.controls['lastName'].dirty || contactForm.controls['lastName'].touched)}" formControlName="lastName" type="lastName" name="lastName" id="lastName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Nom" required>
+        </div>
+        <!-- prenom -->
+        <div>
+          <input [ngClass]="{'border-red-600 border-4': contactForm.controls['firstName'].invalid && (contactForm.controls['firstName'].dirty || contactForm.controls['firstName'].touched)}" formControlName="firstName" type="firstName" name="firstName" id="firstName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Pr&eacute;nom" required>
+        </div>     
+      </div>
+      <!-- email -->
+      <div>
+        <input [ngClass]="{'border-red-600 border-4': contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)}" formControlName="email" type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@company.com" required>
+      </div>
+      <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)">
+        <p class="text-red-600">email non valide</p>
+      </div>
+      <!-- presta -->
+
+      <select id="small" class="text-center block w-full p-2 mb-6 text-sm text-black border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option selected>Prestation</option>
+        <option value="clip">CLIP</option>
+      </select>
+      <!-- Message -->
+      <div>
+        <textarea formControlName="message" id="message" name="message" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Message"></textarea>
+      </div>
+
+      <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Envoyer</button>
+    </form>
+  </div>
+  <div class="text-3xl ">
+    <p>71 rue Steve Jobs, 34000 Montpellier</p>
+    <p class="pt-4">06 14 65 16 45</p>
+    <p class="pt-4">@insta</p>
+    <p class="pt-4">@linkedin</p>
+    <p class="pt-4"></p>
+  </div>
+</div>
+
