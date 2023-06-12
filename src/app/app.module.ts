@@ -29,6 +29,7 @@ import { PageTeamComponent } from './page/page-team/page-team.component';
 import { PageDevisComponent } from './page/page-devis/page-devis.component';
 import { MenuComponent } from './navbar/menu/menu.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { PageContactComponent } from './page/page-contact/page-contact.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     PageDevisComponent,
     MenuComponent,
     SignInComponent,
+    PageContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +89,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
       {
         path: 'pageDevis',
         component: PageDevisComponent,
+      },
+      {
+        path: 'pageContact',
+        component: PageContactComponent,
       },
       {
         path: 'login',
