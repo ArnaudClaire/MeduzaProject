@@ -1,9 +1,9 @@
 <div class="flex flex-col bg-center min-h-screen justify-center items-center align-middle content-center">
     <!-- bloc1 -->
-    <div class="h-screen bg-[url('/assets/Images/team/rectangle_56.png')] bg-cover flex flex-col items-center">
+    <div class="w-full h-screen bg-[url('/assets/Images/team/rectangle_56.png')] bg-cover flex flex-col items-center">
 
     
-        <div class="pt-10 w-4/6 h-1/2 flex text-center flex-row items-center justify-evenly">
+        <div class="pt-10 w-4/6 h-screen md:h-1/2 flex text-center flex-col md:flex-row items-center justify-evenly">
     
             <button (click)="choiceComponent(0)">Optimisation SEO</button>
             <button (click)="choiceComponent(1)">Comunity Management</button>
@@ -14,7 +14,7 @@
     
         </div>
         <!-- bloc2 -->
-        <div class="h-1/2 bg-black flex flex-col items-center justify-around">
+        <div class="h-screen bg-black flex flex-col items-center justify-around">
 
             <ng-container [ngSwitch]="choice">
                 <div class="h-full" *ngSwitchCase="0">
@@ -43,16 +43,16 @@
     </div>
     <!-- bloc3 -->
 
-        <div class="by2 bg-[url('/assets/Images/team/calque_0_1.png')] bg-cover bg-bottom flex flex-col justify-evenly items-center">
+        <div class="h-screen bg-[url('/assets/Images/team/calque_0_1.png')] bg-cover bg-bottom flex flex-col justify-evenly items-center">
             <div class="flex flex-row justify-around">
-                <div class="w-2/6">
+                <div class="w-4/6 md:w-2/6">
                     <p>
                         La refonte de votre site Internet devient urgente car le site actuel nuit à l’image de votre entreprise ? Votre site est vieillissant, vous n’avez plus la main sur vos contenus et souhaitez un site moderne sur WordPress ? Vous avez un projet de création de site web ? Ou souhaitez simplement apporter de nouvelles fonctionnalités à votre site actuel ?
 Notre agence web spécialiste en création de site internet à Montpellier se base sur votre objectif et votre budget pour vous proposer la solution la mieux adaptée : Création de site vitrine sur-mesure ou selon un thème WordPress, site e-commerce, application mobile native, progressive webapp…
                     </p>
                 </div>
                 
-                <div class="w-2/6">
+                <div class="hidden md:block md:w-2/6">
                     <p>
                         Plus l’expérience utilisateur (UX) de votre site web ou de votre application est optimisée, plus les internautes passeront plus de temps sur la plateforme digitale; ce qui en fait une arme fatale à la fois pour le référencement naturel et pour le taux de conversion (prise de contact, achats en ligne).Notre équipe d’UX designers et nos chefs de projets vous accompagnent pour dessiner la meilleure expérience possible pour votre site : design, fluidité du parcours, position et nom des call to action, tout est pensé et bien pensé ! L’UX Design est l’un des critères de base d’un site bien référencé et générateur de leads. Voilà pourquoi notre agence de communication place l’expérience utilisateur au cœur de la création des sites internet.
                     </p>
