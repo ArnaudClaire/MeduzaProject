@@ -36,6 +36,7 @@ import { ComunityComponent } from './page/benefit-component/comunity/comunity.co
 import { AccompagnementComponent } from './page/benefit-component/accompagnement/accompagnement.component';
 import { GraphismeComponent } from './page/benefit-component/graphisme/graphisme.component';
 import { PrestationComponent } from './page/benefit-component/prestation/prestation.component';
+import { CreationforBenefComponent } from './page/benefit-component/creationfor-benef/creationfor-benef.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { PrestationComponent } from './page/benefit-component/prestation/prestat
     NavbarComponent,
     FooterComponent,
     CreationComponent,
+    CreationforBenefComponent,
     BenefitComponent,
     TeamComponent,
     BackOfficeComponent,

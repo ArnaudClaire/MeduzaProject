@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class PageBenefitComponent {
 
+  choice :number=0;
+  choiceComponent(number: number){
+    this.choice=number;
+  }
 }

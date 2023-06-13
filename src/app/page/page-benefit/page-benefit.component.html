@@ -5,49 +5,40 @@
     
         <div class="pt-10 w-4/6 h-1/2 flex text-center flex-row items-center justify-evenly">
     
-            <a>Optimisation SEO</a>
-            <a>Comunity Management</a>
-            <a>Accopagnement marketing</a>
-            <a>Graphisme et identit&eacute; visuelle</a>
-            <a>Cr&eacute;ation de site web</a>
-            <a>Prestation audiovisuelle</a>
+            <button (click)="choiceComponent(0)">Optimisation SEO</button>
+            <button (click)="choiceComponent(1)">Comunity Management</button>
+            <button (click)="choiceComponent(2)">Accopagnement marketing</button>
+            <button (click)="choiceComponent(3)">Graphisme et identit&eacute; visuelle</button>
+            <button (click)="choiceComponent(4)">Cr&eacute;ation de site web</button>
+            <button (click)="choiceComponent(5)">Prestation audiovisuelle</button>
     
         </div>
         <!-- bloc2 -->
         <div class="h-1/2 bg-black flex flex-col items-center justify-around">
 
-            <div class="flex flex-col justify-evenly h-1/3 w-4/6">        
-                <h1 class="text-left text-2xl">Optimisation SEO</h1>
-                <p class="text-center">On vous accompagne dans la mise en place de votre strat&eacute;gie SEO, afin d&#39;avoir une meilleure visibilit&eacute; aupr&egrave;s de votre client&egrave;le cible et de toucher une plus large communauté en augmentant votre traffic sur votre site Web. Cela vous permettra de vous démarquer de vos concurrents en passant à la vitesse supérieur, grace aux meilleures optimisations que nous allons vous apporter.</p>
-            </div>
-
-            <div class="flex flex-row justify-around items-center h-1/2">        
-                <div class="flex flex-col justify-evenly h-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30px" height="30px">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 16.17L5.83 13L4.41 14.41L9 19L21 7L19.59 5.59L9 16.17z"/>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30px" height="30px">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 16.17L5.83 13L4.41 14.41L9 19L21 7L19.59 5.59L9 16.17z"/>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30px" height="30px">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 16.17L5.83 13L4.41 14.41L9 19L21 7L19.59 5.59L9 16.17z"/>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30px" height="30px">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 16.17L5.83 13L4.41 14.41L9 19L21 7L19.59 5.59L9 16.17z"/>
-                    </svg>
+            <ng-container [ngSwitch]="choice">
+                <div class="h-full" *ngSwitchCase="0">
+                    <app-optimisation></app-optimisation>
                 </div>
-                <div class="flex flex-col text-xl justify-evenly h-full">
-                    <h1>Coh&eacute;rence r&eacute;dactionnelle</h1>
-                    <h1>Gagner en visibilit&eacute;</h1>
-                    <h1>Gén&eacute;rer du traffic qualifi&eacute;</h1>
-                    <h1>Qualité d&#39;&eacute;criture</h1>
+                <div class="h-full" *ngSwitchCase="1">
+                    <app-comunity></app-comunity>
                 </div>
-            </div>
-    
+                <div class="h-full" *ngSwitchCase="2">
+                    <app-accompagnement></app-accompagnement>
+                </div>
+                <div class="h-full" *ngSwitchCase="3">
+                    <app-graphisme></app-graphisme>
+                </div>
+                <div class="h-full" *ngSwitchCase="4">
+                    <app-creationfor-benef></app-creationfor-benef>
+                </div>
+                <div class="h-full" *ngSwitchCase="5">
+                    <app-prestation></app-prestation>
+                </div>
+                <div class="h-full" *ngSwitchDefault>
+                    <app-optimisation></app-optimisation>
+                </div>
+            </ng-container>
         </div>
     </div>
     <!-- bloc3 -->
@@ -56,18 +47,21 @@
             <div class="flex flex-row justify-around">
                 <div class="w-2/6">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit sem venenatis orci porta ultricies. Etiam ultrices, erat in ullamcorper tincidunt, nibh nulla bibendum nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit sem venenatis orci porta ultricies. Etiam ultrices, erat in ullamcorper tincidunt, nibh nulla bibendum nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit sem venenatis orci porta ultricies. Etiam ultrices, erat in ullamcorper tincidunt, nibh nulla bibendum nulla.
+                        La refonte de votre site Internet devient urgente car le site actuel nuit à l’image de votre entreprise ? Votre site est vieillissant, vous n’avez plus la main sur vos contenus et souhaitez un site moderne sur WordPress ? Vous avez un projet de création de site web ? Ou souhaitez simplement apporter de nouvelles fonctionnalités à votre site actuel ?
+Notre agence web spécialiste en création de site internet à Montpellier se base sur votre objectif et votre budget pour vous proposer la solution la mieux adaptée : Création de site vitrine sur-mesure ou selon un thème WordPress, site e-commerce, application mobile native, progressive webapp…
                     </p>
                 </div>
                 
                 <div class="w-2/6">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit sem venenatis orci porta ultricies. Etiam ultrices, erat in ullamcorper tincidunt, nibh nulla bibendum nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit sem venenatis orci porta ultricies. Etiam ultrices, erat in ullamcorper tincidunt, nibh nulla bibendum nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit sem venenatis orci porta ultricies. Etiam ultrices, erat in ullamcorper tincidunt, nibh nulla bibendum nulla.
+                        Plus l’expérience utilisateur (UX) de votre site web ou de votre application est optimisée, plus les internautes passeront plus de temps sur la plateforme digitale; ce qui en fait une arme fatale à la fois pour le référencement naturel et pour le taux de conversion (prise de contact, achats en ligne).Notre équipe d’UX designers et nos chefs de projets vous accompagnent pour dessiner la meilleure expérience possible pour votre site : design, fluidité du parcours, position et nom des call to action, tout est pensé et bien pensé ! L’UX Design est l’un des critères de base d’un site bien référencé et générateur de leads. Voilà pourquoi notre agence de communication place l’expérience utilisateur au cœur de la création des sites internet.
                     </p>
                 </div>
             </div>
-    
-            <button class="uppercase rounded-xl border-2 p-4 hover:bg-white hover:text-black hover:opacity-60">devis gratuit</button>
+            <a href="/pageContact">
+                <button class="uppercase rounded-xl border-2 p-4 hover:bg-white hover:text-black hover:opacity-60">devis gratuit</button>
+            </a>
+            
         </div>
 
 </div>
