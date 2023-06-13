@@ -30,6 +30,7 @@ import { PageDevisComponent } from './page/page-devis/page-devis.component';
 import { MenuComponent } from './navbar/menu/menu.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { PageContactComponent } from './page/page-contact/page-contact.component';
+import { PageBenefitComponent } from './page/page-benefit/page-benefit.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { PageContactComponent } from './page/page-contact/page-contact.component
     MenuComponent,
     SignInComponent,
     PageContactComponent,
+    PageBenefitComponent,
   ],
   imports: [
     BrowserModule,
