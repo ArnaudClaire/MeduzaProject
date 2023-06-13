@@ -31,6 +31,11 @@ import { MenuComponent } from './navbar/menu/menu.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { PageContactComponent } from './page/page-contact/page-contact.component';
 import { PageBenefitComponent } from './page/page-benefit/page-benefit.component';
+import { OptimisationComponent } from './page/benefit-component/optimisation/optimisation.component';
+import { ComunityComponent } from './page/benefit-component/comunity/comunity.component';
+import { AccompagnementComponent } from './page/benefit-component/accompagnement/accompagnement.component';
+import { GraphismeComponent } from './page/benefit-component/graphisme/graphisme.component';
+import { PrestationComponent } from './page/benefit-component/prestation/prestation.component';
 
 
 @NgModule({
@@ -55,6 +60,11 @@ import { PageBenefitComponent } from './page/page-benefit/page-benefit.component
     SignInComponent,
     PageContactComponent,
     PageBenefitComponent,
+    OptimisationComponent,
+    ComunityComponent,
+    AccompagnementComponent,
+    GraphismeComponent,
+    PrestationComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +105,10 @@ import { PageBenefitComponent } from './page/page-benefit/page-benefit.component
       {
         path: 'pageContact',
         component: PageContactComponent,
+      },
+      {
+        path: 'pagePresta',
+        component: PageBenefitComponent,
       },
       {
         path: 'login',
