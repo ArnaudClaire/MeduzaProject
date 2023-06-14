@@ -23,7 +23,7 @@ import { UpdateProjectComponent } from './update-project/update-project.componen
 import { DeleteProjectComponent } from './delete-project/delete-project.component';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireModule } from '@angular/fire/compat';
-import { CarrousselBlocComponent } from './carroussel-bloc/carroussel-bloc.component';
+
 import { PageCreationComponent } from './page/page-creation/page-creation.component';
 import { PageTeamComponent } from './page/page-team/page-team.component';
 import { PageDevisComponent } from './page/page-devis/page-devis.component';
@@ -37,7 +37,6 @@ import { AccompagnementComponent } from './page/benefit-component/accompagnement
 import { GraphismeComponent } from './page/benefit-component/graphisme/graphisme.component';
 import { PrestationComponent } from './page/benefit-component/prestation/prestation.component';
 import { CreationforBenefComponent } from './page/benefit-component/creationfor-benef/creationfor-benef.component';
-
 
 @NgModule({
   declarations: [
@@ -54,7 +53,7 @@ import { CreationforBenefComponent } from './page/benefit-component/creationfor-
     AddProjectComponent,
     UpdateProjectComponent,
     DeleteProjectComponent,
-    CarrousselBlocComponent,
+
     PageCreationComponent,
     PageTeamComponent,
     PageDevisComponent,
