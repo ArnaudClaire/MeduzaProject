@@ -120,11 +120,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       {
         path: '404',
         component: PageNotFoundComponent,
-      },
-      {
-        path: '**',
-        redirectTo: '/404',
       }
+      // ,
+      // {
+      //   path: '**',
+      //   redirectTo: '/404',
+      // }
     ]),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
