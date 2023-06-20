@@ -3,9 +3,9 @@
     <embed src="{{ project.file }}" class="h-full w-full object-cover object-center group-hover:opacity-75">
   </div> -->
 <div class="flex flex-col justify-center items-center">
-  <h1 class="text-4xl font-bold text-blue-600">Titre</h1>
+  <!-- <h1 class="text-4xl font-bold text-blue-600">Titre</h1> -->
   <p class="text-green-600 font-bold text-lg">{{ project.title }}</p>
-  <h1 class="text-4xl font-bold text-yellow-500">Video/Son/image</h1>
+  <!-- <h1 class="text-4xl font-bold text-yellow-500">Video/Son/image</h1> -->
   <div *ngIf="file.type.includes('image'); else elseBlock">
     <img [src]="file.url" [alt]="file.name">
   </div>
@@ -17,6 +17,6 @@
       </video>
     </div>
   </ng-template>
-  <h1 class="text-4xl font-bold text-red-500">description</h1>
+  <!-- <h1 class="text-4xl font-bold text-red-500">description</h1> -->
   <p class="mt-1 text-lg font-medium text-gray-900">{{ project.description }}</p>
 </div>
