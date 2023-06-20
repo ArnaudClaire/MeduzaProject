@@ -37,6 +37,7 @@ import { AccompagnementComponent } from './page/benefit-component/accompagnement
 import { GraphismeComponent } from './page/benefit-component/graphisme/graphisme.component';
 import { PrestationComponent } from './page/benefit-component/prestation/prestation.component';
 import { CreationforBenefComponent } from './page/benefit-component/creationfor-benef/creationfor-benef.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { CreationforBenefComponent } from './page/benefit-component/creationfor-
     AccompagnementComponent,
     GraphismeComponent,
     PrestationComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,6 +116,14 @@ import { CreationforBenefComponent } from './page/benefit-component/creationfor-
       {
         path: 'login',
         component: SignInComponent,
+      },
+      {
+        path: '404',
+        component: PageNotFoundComponent,
+      },
+      {
+        path: '**',
+        redirectTo: '/404',
       }
     ]),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
